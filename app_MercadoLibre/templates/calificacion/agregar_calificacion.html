@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container mt-4 p-4 bg-white rounded shadow">
+  <h3 class="text-primary mb-4">Agregar Calificación</h3>
+  <form method="POST">
+    {% csrf_token %}
+    <div class="mb-3">
+      <label>Producto</label>
+      <select name="producto" class="form-control">
+        {% for p in productos %}
+        <option value="{{ p.id_producto }}">{{ p.nombre }}</option>
+        {% endfor %}
+      </select>
+    </div>
+    <div class="mb-3">
+      <label>Vendedor</label>
+      <select name="vendedor" class="form-control">
+        {% for v in vendedores %}
+        <option value="{{ v.id_vendedor }}">{{ v.nombre }}</option>
+        {% endfor %}
+      </select>
+    </div>
+    <div class="mb-3">
+      <label>Usuario</label>
+      <select name="usuario" class="form-control">
+        {% for u in usuarios %}
+        <option value="{{ u.id_usuario }}">{{ u.nombre }}</option>
+        {% endfor %}
+      </select>
+    </div>
+    <div class="mb-3">
+      <label>Puntuación (1 a 5)</label>
+      <input type="number" name="puntuacion" class="form-control" min="1" max="5">
+    </div>
+    <div class="mb-3">
+      <label>Comentario</label>
+      <textarea name="comentario" class="form-control"></textarea>
+    </div>
+    <button class="btn btn-success">Guardar</button>
+    <a href="{% url 'ver_calificacion' %}" class="btn btn-secondary">Cancelar</a>
+  </form>
+</div>
+{% endblock %}

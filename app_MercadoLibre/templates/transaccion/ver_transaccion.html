@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="card card-soft p-3">
+  <div class="d-flex justify-content-between mb-3">
+    <h4>Transacciones</h4>
+    <a class="btn btn-success" href="{% url 'agregar_transaccion' %}"><i class="bi bi-plus-lg"></i> Nueva</a>
+  </div>
+
+  <div class="table-responsive">
+    <table class="table table-hover">
+      <thead class="table-light">
+        <tr>
+          <th>ID</th>
+          <th>Usuario</th>
+          <th>Banco Usuario</th>
+          <th>Vendedor</th>
+          <th>Banco Vendedor</th>
+          <th>Monto</th>
+          <th>Tipo</th>
+          <th>Estado</th>
+          <th>Fecha</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for t in transacciones %}
+        <tr>
+          <td>{{ t.id_transaccion }}</td>
+          <td>{{ t.usuario.nombre }}</td>
+          <td>{{ t.banco_usuario }}</td>
+          <td>{{ t.vendedor.nombre }}</td>
+          <td>{{ t.banco_vendedor }}</td>
+          <td>${{ t.monto_total }}</td>
+          <td>{{ t.tipo }}</td>
+          <td>{{ t.estado }}</td>
+          <td>{{ t.fecha }}</td>
+          <td>
+            <a class="btn btn-sm btn-info" href="{% url 'actualizar_transaccion' t.id_transaccion %}">Editar</a>
+            <a class="btn btn-sm btn-danger" href="{% url 'borrar_transaccion' t.id_transaccion %}">Borrar</a>
+          </td>
+        </tr>
+        {% empty %}
+        <tr><td colspan="10" class="text-center">No hay transacciones aún.</td></tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</div>
+{% endblock %}

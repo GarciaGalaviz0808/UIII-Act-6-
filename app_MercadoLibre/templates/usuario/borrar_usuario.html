@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container mt-5 text-center p-4 bg-white rounded shadow">
+  <h4 class="text-danger">¿Seguro que deseas eliminar este usuario?</h4>
+  <p>{{ usuario.nombre }} {{ usuario.apellido }}</p>
+  <form method="POST">
+    {% csrf_token %}
+    <button type="submit" class="btn btn-danger">Sí, borrar</button>
+    <a href="{% url 'ver_usuario' %}" class="btn btn-secondary">Cancelar</a>
+  </form>
+</div>
+{% endblock %}

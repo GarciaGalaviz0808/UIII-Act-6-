@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container mt-5 text-center p-4 bg-white rounded shadow">
+  <h4 class="text-danger">¿Eliminar transacción {{ transaccion.id_transaccion }}?</h4>
+  <form method="POST">
+    {% csrf_token %}
+    <button type="submit" class="btn btn-danger">Sí, borrar</button>
+    <a href="{% url 'ver_transaccion' %}" class="btn btn-secondary">Cancelar</a>
+  </form>
+</div>
+{% endblock %}

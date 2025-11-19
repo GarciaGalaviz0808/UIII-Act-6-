@@ -1,0 +1,106 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center" href="{% url 'inicio' %}">
+        <i class="bi bi-cart3 fs-3 me-2" style="color:#3b82c4"></i>
+        <span class="fw-bold">Sistema de Administración Mercado Libre</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+  
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="{% url 'inicio' %}">Inicio</a></li>
+  
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">
+              Vendedor
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="{% url 'agregar_vendedor' %}">Agregar vendedor</a></li>
+              <li><a class="dropdown-item" href="{% url 'ver_vendedor' %}">Ver vendedor</a></li>
+              <li><a class="dropdown-item" href="#">Actualizar vendedor</a></li>
+              <li><a class="dropdown-item" href="#">Borrar vendedor</a></li>
+            </ul>
+          </li>
+  
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">
+              Categorías
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="{% url 'agregar_categoria' %}">Agregar categoria</a></li>
+              <li><a class="dropdown-item" href="{% url 'ver_categoria' %}">Ver categoria</a></li>
+              <li><a class="dropdown-item" href="#">Actualizar categoria</a></li>
+              <li><a class="dropdown-item" href="#">Borrar categoria</a></li>
+            </ul>
+          </li>
+          
+  
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">
+              Productos
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="{% url 'agregar_producto' %}">Agregar producto</a></li>
+              <li><a class="dropdown-item" href="{% url 'ver_producto' %}">Ver productos</a></li>
+              <li><a class="dropdown-item" href="#">Actualizar productos</a></li>
+              <li><a class="dropdown-item" href="#">Borrar productos</a></li>
+            </ul>
+          </li>
+  
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownUsuarios" data-bs-toggle="dropdown">
+                  Usuarios
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="{% url 'agregar_usuario' %}">Agregar usuario</a></li>
+                  <li><a class="dropdown-item" href="{% url 'ver_usuario' %}">Ver usuarios</a></li>
+                  <li><a class="dropdown-item" href="#">Actualizar usuario</a></li>
+              <li><a class="dropdown-item" href="#">Borrar usuario</a></li>
+                </ul>
+              </li>
+              
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownCalificaciones" data-bs-toggle="dropdown">
+                  Calificaciones
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="{% url 'agregar_calificacion' %}">Agregar calificación</a></li>
+                  <li><a class="dropdown-item" href="{% url 'ver_calificacion' %}">Ver calificaciones</a></li>
+                  <li><a class="dropdown-item" href="#">Actualizar calificacion</a></li>
+                  <li><a class="dropdown-item" href="#">Borrar calificacion</a></li>
+                </ul>
+              </li>
+              
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownTransacciones" data-bs-toggle="dropdown">
+                  Transacciones
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="{% url 'agregar_transaccion' %}">Agregar transacción</a></li>
+                  <li><a class="dropdown-item" href="{% url 'ver_transaccion' %}">Ver transacciones</a></li>
+                  <li><a class="dropdown-item" href="#">Actualizar transaccion</a></li>
+                  <li><a class="dropdown-item" href="#">Borrar transaccion</a></li>
+                  
+                </ul>
+              </li>
+              
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownPedidos" data-bs-toggle="dropdown">
+                  Pedidos
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="{% url 'agregar_pedido' %}">Agregar pedido</a></li>
+                  <li><a class="dropdown-item" href="{% url 'ver_pedido' %}">Ver pedidos</a></li>
+                  <li><a class="dropdown-item" href="#">Actualizar pedido</a></li>
+                  <li><a class="dropdown-item" href="#">Borrar pedido</a></li>
+                </ul>
+              </li>
+              
+          
+  
+        </ul>
+      </div>
+    </div>
+  </nav>
